@@ -1,0 +1,27 @@
+﻿@model MaosAObra.Models.OrcamentoModel
+
+<h2>Solicitar Orçamento</h2>
+
+<form asp-action="Criar">
+    <label>Nome:</label>
+    <input asp-for="ClienteNome" required />
+
+    <label>Telefone:</label>
+    <input asp-for="Telefone" required />
+
+    <label>Serviço:</label>
+    <select asp-for="TipoServico">
+        <option value="Assentamento de piso">Assentamento de piso</option>
+        <option value="Construção de parede">Construção de parede</option>
+        <option value="Reboco">Reboco</option>
+        <option value="Pintura">Pintura</option>
+    </select>
+
+    <label>Metragem (m²):</label>
+    <input asp-for="Metragem" type="number" step="0.1" required />
+
+    <label>Endereço:</label>
+    <input asp-for="Endereco" required />
+
+    <button type="submit">Solicitar</button>
+</form>

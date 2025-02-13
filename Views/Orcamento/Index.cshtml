@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MaosAObra.Models.OrcamentoModel>
+
+<h2>Lista de Orçamentos</h2>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Serviço</th>
+        <th>Metragem</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Status</th>
+        <th>Ação</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ClienteNome</td>
+            <td>@item.Telefone</td>
+            <td>@item.TipoServico</td>
+            <td>@item.Metragem m²</td>
+            <td>R$ @item.Valor.ToString("F2")</td>
+            <td>@(item.DataAgendamento?.ToString("dd/MM/yyyy") ?? "Pendente")</td>
+            <td>@(item.Confirmado ? "Confirmado" : "Pendente")</td>
+            <td>
+                @if (!item.Confirmado)
+                {
+                    <form action="/Orcamento/Confirmar/@item.Id" method="post">
+                        <input type="date" name="data" required />
+                        <button type="submit">Confirmar</button>
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Orcamento/Criar">Novo Orçamento</a>
