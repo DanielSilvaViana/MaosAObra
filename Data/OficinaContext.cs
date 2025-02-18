@@ -9,6 +9,12 @@ namespace MaosAObra.Data
 
         public DbSet<OrcamentoModel> Orcamentos { get; set; }
 
+        public DbSet<UsuarioModel> Usuarios { get; set; }
+
+        public DbSet<EnderecoModel> Enderecos { get; set; }
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OrcamentoModel>()
