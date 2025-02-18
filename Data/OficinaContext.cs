@@ -11,7 +11,7 @@ namespace MaosAObra.Data
 
         public DbSet<UsuarioModel> Usuarios { get; set; }
 
-        public DbSet<EnderecoModel> Enderecos { get; set; }
+        public DbSet<EnderecoModel> Enderecos { get; set; } 
 
 
 
