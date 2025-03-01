@@ -1,6 +1,7 @@
 ﻿using MaosAObra.Models;
-using MaosAObra.Services.SessaoSerive;
 using Newtonsoft.Json;
+using MaosAObra.Services.SessaoSerive;
+
 
 namespace MaosAObra.Services.SessaoService
 {
@@ -15,7 +16,7 @@ namespace MaosAObra.Services.SessaoService
 
         public UsuarioModel BuscarSessao()
         {
-            string sessaoUsuario = _contextAcessor.HttpContext.Session.GetString("SessaoUsuario");
+            string sessaoUsuario = _contextAcessor.HttpContext?.Session.GetString("SessaoUsuario");
             if (string.IsNullOrEmpty(sessaoUsuario))
             {
                 return null;

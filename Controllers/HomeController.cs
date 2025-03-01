@@ -9,11 +9,14 @@ namespace MaosAObra.Controllers
     {
         private readonly ISessaoInterface _sessaoInterface;
         private readonly IHomeInterface _homeInterface;
+        private readonly IHttpContextAccessor _contextAccessor;
 
-        public HomeController(ISessaoInterface sessaoInterface, IHomeInterface homeInterface)
+
+        public HomeController(ISessaoInterface sessaoInterface, IHomeInterface homeInterface, IHttpContextAccessor contextAccessor)
         {
             _sessaoInterface = sessaoInterface;
             _homeInterface = homeInterface;
+            _contextAccessor = contextAccessor;
         }
 
         [HttpGet]
