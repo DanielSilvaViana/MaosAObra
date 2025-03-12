@@ -108,7 +108,7 @@ namespace MaosAObra.Controllers
                     return RedirectToAction("Index", "Funcionario");
                 }
 
-                return RedirectToAction("Index", "Cliente", new { id = "0" });
+                return RedirectToAction("Index", "Cliente", new { id = "2" });
             }
 
 
